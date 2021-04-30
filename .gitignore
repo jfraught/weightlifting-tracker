@@ -1,1 +1,12 @@
 
+.DS_Store
+.DS_Store?
+
+node_modules/
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+.env
+.env.test
