@@ -1,0 +1,88 @@
+html {
+	background: #89e2cd;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	margin: 0 5% 0 5%;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+	margin: 5% 5%;
+
+
+}
+
+.app-name-banner {
+	text-align: center;
+
+	text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.login-form {
+	margin: 0 5% 0 5%;
+	display: flex;
+	flex-direction: column;
+
+}
+.form-banner {
+	display: flex;
+	justify-content: center;
+}
+
+.login-sections {
+	padding: 15px;
+	display: flex;
+	justify-content: center;
+
+}
+
+
+.login-signup-input {
+	width: 100%;
+	padding: 12px;
+	font-size: 14px;
+
+	background-color: #ffffff;
+	color: #000000;
+	border-style: hidden;
+	border-radius: 20px;
+	box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.4);
+}
+input:focus {
+	outline: none;
+}
+
+.submit-button {
+	display: flex;
+	justify-content: center;
+	padding: 15px;
+}
+
+.submit-button button {
+	/* 	box-shadow: -1px 2px 4px rgba(0,0,0,.40); */
+
+	background-color: #ffffff;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 5px 40px;
+	border: none;
+}
+.submit-button button:hover {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+#back-to-signup {
+	display: flex;
+	justify-content: center;
+	padding: 15px;
+	font-size: 13px;
+	font-style: italic;
+}
+
+#back-to-signup a:hover {
+	color: white;
+}
