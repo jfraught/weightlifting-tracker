@@ -1,0 +1,47 @@
+{{!-- TODO: nav --}}
+{{!-- we will start at the weekview page but if not logged in then tell them to login --}}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weightlifting Planner</title>
+    <link rel="stylesheet" href=" ">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+        <nav>
+            {{!-- USE loggedIn --}}
+        {{#if loggedIn}}
+        {{!-- logout button if not logged in --}}
+        <button id="logout" >logout</button>
+        {{else}}
+        {{!-- login button -- take me to login page--}}
+        <a href="/login">login</a>
+        {{/if}}
+        </nav>
+    <header>
+        <h1>
+            <a href="/">Weightlifting Planner</a>
+        </h1>    
+    </header>
+    <main>
+        {{!-- if logged in, I want to show workout names in my cards --}}
+        {{!-- ELSE not logged in then say "LOGIN TO START ADDING WORKOUTS" --}}
+
+
+        {{!-- HOW DO I DO THIS? HOW DO I TELL THEM I WANT TO SHOW WEEKVIEW.HANDLEBARS IF LOGGED IN --}}
+
+            {{!-- USE loggedIn --}}
+                {{#if loggedIn}}
+
+        {{else}}
+        {{!-- login button -- take me to login page--}}
+        <a href="/login">login</a>
+        {{/if}}
+
+    </main>
+</body>
