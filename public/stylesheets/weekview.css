@@ -1,0 +1,76 @@
+html {
+	background: #89e2cd;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	margin: 0 5% 0 5%;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 5% 5%;
+
+	/*   
+    outline-style: solid;
+    outline-weight: 3px;
+    outline-color: red; */
+}
+
+.app-name-banner {
+	text-align: left;
+
+	text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.15);
+
+	/*   should scale font size down with  */
+}
+
+.login-logout-link {
+	display: flex;
+	justify-content: flex-end;
+
+	/*   
+    outline-style: solid;
+    outline-weight: 2px;
+    outline-color: blue; */
+}
+
+.login-logout-link a {
+	padding-left: 25px;
+	font-size: 15px;
+	font-style: italic;
+}
+
+.login-logout-link a:hover {
+	color: white;
+}
+
+.monday-card-preview {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 10px;
+
+	background: white;
+	box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.day-of-week-on-card,
+#button-to-monday,
+.exercise-preview-on-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.day-of-week-on-card {
+	font-weight: bold;
+}
+
+.button-to-day-page a:link {
+	color: black;
+}
+
+.button-to-day-page a:hover {
+	color: #89e2cd;
+}
