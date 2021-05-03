@@ -1,4 +1,73 @@
 {{!-- each item is going to display the user input in basically the same format as my models
-so I should be generating something to the extent of workout.workout_name, workout.weight, 
-workout.repetitions, workout.sets 
+so I should be generating something to the extent of workout.workout_name, workout.weight,
+workout.repetitions, workout.sets
 use partials to iterate over array and display my workouts use #each to iterate over db--}}
+
+
+<body>
+
+    <div class="login-logout-home-link">
+
+        <a href="/">home</a>
+
+        <!--     <a href="/login">login</a> -->
+
+        <a href="/logout"> logout</a>
+
+
+
+    </div>
+
+    <header>
+
+        <div class="app-name-banner">
+            <h1> WEIGHTLIFTING </h1>
+            <h1> PLANNER </h1>
+        </div>
+
+    </header>
+
+
+
+
+    <div class="workout-data-titles">
+        <h2> workout name </h2>
+        <h2> weight </h2>
+        <h2> reps </h2>
+        <h2> sets </h2>
+    </div>
+
+{{!-- OUR ROW CARDS THAT HOLD THE DB INFORMATION --}}
+    <section class="each-workout-card">
+        <ul>
+            {{#each workout as |workout|}}
+        <div class="workout-name-on-card">
+            <div> {{ workout.workout_name}} </div>
+        </div>
+
+        <div class="weight-display-on-card">
+            <div> {{ workout.weight }}</div>
+        </div>
+
+        <div class="repetitions-display-on-card">
+            <div> {{ workout.repetitions }} </div>
+        </div>
+
+        <div class="sets-display-on-card">
+            <div> {{ workout.sets }} </div>
+        </div>
+        {{/each}}
+        </ul>
+    </section>
+
+    <section class="weight-display">
+
+    </section>
+
+
+
+
+
+</body>
+
+

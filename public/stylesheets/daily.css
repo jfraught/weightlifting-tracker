@@ -1,0 +1,63 @@
+html {
+	background: #89e2cd;
+	font-family: 'Roboto', sans-serif;
+}
+
+body {
+	margin: 0 5% 0 5%;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	margin: 5% 5%;
+
+	/*   outline-style: solid;
+    outline-weight: 3px;
+    outline-color: red; */
+}
+
+.app-name-banner {
+	text-align: left;
+
+	text-shadow: -2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.workout-data-titles {
+	display: flex;
+	justify-content: space-between;
+
+	font-size: 12px;
+}
+
+.login-logout-home-link {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.login-logout-home-link a {
+	padding-left: 25px;
+	font-size: 15px;
+	font-style: italic;
+}
+
+.login-logout-link a:hover {
+	color: white;
+}
+
+.each-workout-card {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 10px;
+
+	background: white;
+	box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.button-to-day-page a:link {
+	color: black;
+}
+
+.button-to-day-page a:hover {
+	color: #89e2cd;
+}
