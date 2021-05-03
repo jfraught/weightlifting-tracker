@@ -11,8 +11,6 @@ header {
 	display: flex;
 	justify-content: center;
 	margin: 5% 5%;
-
-
 }
 
 .app-name-banner {
@@ -25,7 +23,6 @@ header {
 	margin: 0 5% 0 5%;
 	display: flex;
 	flex-direction: column;
-
 }
 .form-banner {
 	display: flex;
@@ -36,9 +33,7 @@ header {
 	padding: 15px;
 	display: flex;
 	justify-content: center;
-
 }
-
 
 .login-signup-input {
 	width: 100%;
@@ -75,7 +70,8 @@ input:focus {
 	background-color: rgba(255, 255, 255, 0.7);
 }
 
-#back-to-signup {
+#back-to-signup,
+#back-to-login {
 	display: flex;
 	justify-content: center;
 	padding: 15px;
@@ -83,6 +79,7 @@ input:focus {
 	font-style: italic;
 }
 
-#back-to-signup a:hover {
+#back-to-signup a:hover,
+#back-to-login a:hover {
 	color: white;
 }
