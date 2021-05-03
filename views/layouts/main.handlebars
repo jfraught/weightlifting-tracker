@@ -9,8 +9,9 @@
         content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
     <title>Weightlifting Planner</title>
     {{!-- login and signup stylesheet --}}
-    <link rel="stylesheet" href="public\stylesheets\login-signup.css">
-    <link rel="stylesheet" href=" ">
+    <link rel="stylesheet" href="public/stylesheets/login-signup.css">
+    {{!--
+    <link rel="stylesheet" href=" "> --}}
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
         rel="stylesheet">
 
@@ -18,7 +19,7 @@
 
 <body>
 
-    
+
     <nav>
         {{!-- USE loggedIn --}}
         {{#if loggedIn}}
@@ -32,7 +33,7 @@
 
     <main>
         {{!-- what view am I using? --}}
-    {{{ body }}}
+        {{{ body }}}
 
     </main>
 </body>
@@ -42,16 +43,5 @@
 
 
 
-        {{!-- if logged in, I want to show workout names in my cards
-        {{!-- ELSE not logged in then say "LOGIN TO START ADDING WORKOUTS" --}}
-
-
-        {{!-- HOW DO I DO THIS? HOW DO I TELL THEM I WANT TO SHOW WEEKVIEW.HANDLEBARS IF LOGGED IN --}}
-
-        {{!-- USE loggedIn --}}
-        {{#if loggedIn}}
-
-        {{else}}
-        {{!-- login button -- take me to login page--}}
-        <a href="/login">login</a>
-        {{/if}} --}}
+{{!-- if logged in, I want to show workout names in my cards
+{{!-- ELSE not logged in then say "LOGIN TO START ADDING WORKOUTS" --}}
