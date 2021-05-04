@@ -11,67 +11,69 @@ router.get('/', (req, res) => {
         });
 });
 
-    
 
-    router.post('/', (req, res) => {
 
-        Workout.create({
+router.post('/', (req, res) => {
+
+    Workout.create({
+        workout_name: req.body.workout_name,
+        weight: req.body.weight,
+        repetitions: req.body.repetitions,
+        sets: req.body.sets,
+        user_id: req.session.user_id
+    })
+        .then(Data => res.json(Data))
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+router.put('/:id', (req, res) => {
+    Workout.update(
+        {
             workout_name: req.body.workout_name,
             weight: req.body.weight,
             repetitions: req.body.repetitions,
             sets: req.body.sets,
-        })
-            .then(Data => res.json(Data))
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    });
-
-    router.put('/:id', (req, res) => {
-        Workout.update(
-            {
-                workout_name: req.body.workout_name,
-                weight: req.body.weight,
-                repetitions: req.body.repetitions,
-                sets: req.body.sets,
-            },
-            {
-                where: {
-                    id: req.params.id
-                }
-            }
-        )
-            .then(Data => {
-                if (!Data) {
-                    res.status(404).json({ message: 'No workout found with this id' });
-                    return;
-                }
-                res.json(Data);
-            })
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    });
-
-    router.delete('/:id', (req, res) => {
-        Workout.destroy({
+            user_id: req.session.user_id
+        },
+        {
             where: {
                 id: req.params.id
             }
+        }
+    )
+        .then(Data => {
+            if (!Data) {
+                res.status(404).json({ message: 'No workout found with this id' });
+                return;
+            }
+            res.json(Data);
         })
-            .then(Data => {
-                if (!Data) {
-                    res.status(404).json({ message: 'No workout found with this id' });
-                    return;
-                }
-                res.json(Data);
-            })
-            .catch(err => {
-                console.log(err);
-                res.status(500).json(err);
-            });
-    });
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
 
-    module.exports = router;
+router.delete('/:id', (req, res) => {
+    Workout.destroy({
+        where: {
+            user_id: req.session.user_id
+        }
+    })
+        .then(Data => {
+            if (!Data) {
+                res.status(404).json({ message: 'No workout found with this id' });
+                return;
+            }
+            res.json(Data);
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+});
+
+module.exports = router;

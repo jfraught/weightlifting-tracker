@@ -9,7 +9,19 @@ router.get('/login', function (req, res) {
 );
 
 router.get('/dashboard', withAuth, function (req, res) {
-    res.render('dashboard');
+
+    Workout.findAll({
+        where: { user_id: req.session.user_id }
+    })
+        .then(data => {
+            const workouts = data.map(workout => workout.get({ plain: true }))
+            res.render('daily', { workouts });
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+
 }
 );
 

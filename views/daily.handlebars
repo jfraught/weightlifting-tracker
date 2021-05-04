@@ -6,81 +6,84 @@ use partials to iterate over array and display my workouts use #each to iterate 
 
 
 
-<body>
-
-    <link rel="stylesheet" href="stylesheets/daily.css">
-
-    <div class="login-logout-home-link">
-
-        <a href="/">home</a>
-
-        <!--     <a href="/login">login</a> -->
-
-        <a href="/logout"> logout</a>
 
 
+<link rel="stylesheet" href="stylesheets/daily.css">
 
+<div class="login-logout-home-link">
+
+    <a href="/">home</a>
+
+    <!--     <a href="/login">login</a> -->
+
+    <a href="/logout"> logout</a>
+
+
+
+</div>
+
+<header>
+
+    <div class="app-name-banner">
+        <h1> WEIGHTLIFTING </h1>
+        <h1> PLANNER </h1>
     </div>
 
-    <header>
-
-        <div class="app-name-banner">
-            <h1> WEIGHTLIFTING </h1>
-            <h1> PLANNER </h1>
-        </div>
-
-    </header>
+</header>
 
 
 
 
 
-    <div class="workout-data-titles">
-        <h2> workout name </h2>
-        <h2> weight </h2>
-        <h2> reps </h2>
-        <h2> sets </h2>
-    </div>
-    {{!-- OUR ROW CARDS THAT HOLD THE DB INFORMATION --}}
-    {{#each workout as |workout| }}
-
-    <ul>
-
-        <section class="each-workout-card">
-            <li>
-                <div class="workout-name-on-card">
-                    <div> {{ workout.workout_name }} </div>
-                </div>
-
-                <div class="weight-display-on-card">
-                    <div> {{ workout.weight }}</div>
-                </div>
-
-                <div class="repetitions-display-on-card">
-                    <div> {{ workout.repetitions }} </div>
-                </div>
-
-                <div class="sets-display-on-card">
-                    <div> {{ workout.sets }} </div>
-                </div>
-            </li>
-        </section>
-    </ul>
-    {{/each}}
+<div class="workout-data-titles">
 
 
 
 
+</div>
+{{!-- OUR ROW CARDS THAT HOLD THE DB INFORMATION --}}
+{{#each workouts as |workout| }}
 
+<ul>
 
+    <section class="each-workout-card">
+        <li>
+            <div class="workout-name-on-card">
+                <h2> workout name </h2>
+                <div> {{ workout_name }} </div>
+            </div>
 
+            <div class="weight-display-on-card">
+                <h2> weight </h2>
+                <div> {{ weight }}</div>
+            </div>
 
-    <section class="weight-display">
+            <div class="repetitions-display-on-card">
+                <h2> reps </h2>
+                <div> {{ repetitions }} </div>
+            </div>
 
+            <div class="sets-display-on-card">
+                <h2> sets </h2>
+                <div> {{ sets }} </div>
+            </div>
+        </li>
     </section>
+</ul>
+{{/each}}
 
 
 
 
 
-</body>
+
+
+
+<section class="weight-display">
+
+</section>
+
+
+
+<canvas id="myChart" width="400" height="400"></canvas>
+<script src='/javascript/chart.js'></script>
