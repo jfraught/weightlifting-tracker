@@ -25,7 +25,8 @@ header {
 
 .workout-data-titles {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
+	/* margin: 0 10px; */
 
 	font-size: 12px;
 }
@@ -45,6 +46,8 @@ header {
 	color: white;
 }
 
+/* TODO use a table instead. so we can line up everything evenly */
+
 .each-workout-card {
 	display: flex;
 	justify-content: space-between;
@@ -52,6 +55,13 @@ header {
 
 	background: white;
 	box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.each-workout-card li {
+	display: flex;
+	justify-content: space-between;
+
+	width: 100%;
 }
 
 .button-to-day-page a:link {
