@@ -5,61 +5,48 @@
 {{!-- is homepage or "/" --}}
 
 
-<html>
 
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
-        rel="stylesheet">
-    <meta name="viewport"
-        content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
-    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
 
-<body>
+<link rel="stylesheet" href="stylesheets/weekview.css">
 
-    <div class="login-logout-link">
 
-        <a href="/login">login</a>
+<div class="login-logout-link">
 
-        <a href="/logout"> logout</a>
+    <a href="/login">login</a>
 
+    <a href="/logout"> logout</a>
+
+</div>
+
+<header>
+
+    <div class="app-name-banner">
+        <h1> WEIGHTLIFTING </h1>
+        <h1> PLANNER </h1>
     </div>
 
-    <header>
-
-        <div class="app-name-banner">
-            <h1> WEIGHTLIFTING </h1>
-            <h1> PLANNER </h1>
-        </div>
-
-    </header>
+</header>
 
 
-    <section class="monday-card-preview">
-        <div class="day-of-week-on-card">
-            <div> MON </div>
-        </div>
-        <div class="exercise-preview-on-card">
-            <div> exercise </div>
-            <div> exercise </div>
-            <div> exercise </div>
-        </div>
-        <div class="button-to-day-page">
-            <a href="/monday" id="button-to-monday">
-                <span class="iconify" data-icon="eva:arrow-circle-right-outline" data-inline="false"
-                    data-height="3.2em"></span>
-            </a>
-        </div>
-    </section>
-
-
-
-
-
-</body>
-
-
-
-
-</html>
+<section class="monday-card-preview">
+    <div class="day-of-week-on-card">
+        <div> MON </div>
+    </div>
+    <div class="exercise-preview-on-card">
+        <div> exercise </div>
+        <div> exercise </div>
+        <div> exercise </div>
+    </div>
+    <div class="button-to-day-page">
+        <a href="/daily" id="button-to-monday">
+            <span class="iconify" data-icon="eva:arrow-circle-right-outline" data-inline="false"
+                data-height="3.2em"></span>
+        </a>
+    </div>
+</section>
