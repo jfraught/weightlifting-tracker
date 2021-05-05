@@ -17,7 +17,7 @@ async function signupFormHandler(event) {
         });
         console.log(response);
         if (response.ok) {
-            document.location.replace('/weekview/');
+            document.location.replace('/');
         } else {
             alert(response.statusText);
         }
