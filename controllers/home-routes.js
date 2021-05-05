@@ -8,13 +8,31 @@ router.get('/login', function (req, res) {
 }
 );
 
-router.get('/dashboard', withAuth, function (req, res) {
+router.get('/', function (req, res) {
 
     Workout.findAll({
         where: { user_id: req.session.user_id }
     })
         .then(data => {
-            const workouts = data.map(workout => workout.get({ plain: true }))
+            res.render('weekview');
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
+
+}
+);
+
+
+
+router.get('/daily', withAuth, function (req, res) {
+
+    Workout.findAll({
+        where: { user_id: req.session.user_id }
+    })
+        .then(data => {
+            const workouts = data.map(workout => workout.get({ plain: true }));
             res.render('daily', { workouts });
         })
         .catch(err => {
