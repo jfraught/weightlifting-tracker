@@ -82,4 +82,12 @@ router.get('/workouts', (req, res) => {
 });
 
 
+
+//go to form page
+
+router.get('/addworkout', (req, res) => {
+    res.render('add-workout')
+})
+
+
 module.exports = router;
