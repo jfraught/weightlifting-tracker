@@ -11,18 +11,11 @@ router.get('/login', function (req, res) {
 router.get('/', function (req, res) {
 
     Workout.findAll({
-        where: { user_id: req.session.user_id }
+        where: { user_id: (req.session && req.session.user_id) || null }
+    }).then(data => {
+        res.render('weekview');
     })
-        .then(data => {
-            res.render('weekview');
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-
-}
-);
+});
 
 
 
