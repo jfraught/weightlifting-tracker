@@ -10,9 +10,21 @@ router.get('/login', function (req, res) {
 
 router.get('/', function (req, res) {
 
+    const { user_id } = req.session || {}
+
+    if( !user_id ){
+        res.redirect('/login');
+        return
+    }
+
     Workout.findAll({
-        where: { user_id: (req.session && req.session.user_id) || null }
-    }).then(data => {
+        where: { user_id }
+    }).then(user => {
+        if( !user ){
+            // this is bad! what do we do?
+            return res.status(500).json({ error:`Couldn't find user by id ${user_id} from session`})
+        }
+        // if we don't have a user, send them to create / login?
         res.render('weekview');
     })
 });
