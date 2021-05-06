@@ -18,6 +18,16 @@ router.get('/', function (req, res) {
 });
 
 
+router.get('/internal/fail', function (req, res) {
+    console.log('testing failed route')
+    throw new Error('Planned failure')
+});
+
+
+router.get('/internal/health', function (req, res) {
+    res.status(200).json({ message: "ok" });
+});
+
 
 router.get('/daily', withAuth, function (req, res) {
 
@@ -28,10 +38,6 @@ router.get('/daily', withAuth, function (req, res) {
             const workouts = data.map(workout => workout.get({ plain: true }));
             res.render('daily', { workouts });
         })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
 
 }
 );
