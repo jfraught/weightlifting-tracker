@@ -19,13 +19,12 @@ router.get('/', function (req, res) {
 
     Workout.findAll({
         where: { user_id }
-    }).then(user => {
-        if( !user ){
-            // this is bad! what do we do?
-            return res.status(500).json({ error:`Couldn't find user by id ${user_id} from session`})
-        }
+    }).then(raw => {
+        const workouts = raw.map(w => w.get({ plain: true }))
+
+        
         // if we don't have a user, send them to create / login?
-        res.render('weekview');
+        res.render('weekview', { workouts });
     })
 });
 

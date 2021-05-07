@@ -13,12 +13,14 @@ router.get('/', (req, res) => {
 
 
 
+
+
 router.post('/', (req, res) => {
 
     Workout.create({
-        workout_name: req.body.workout_name,
+        workout_name: req.body.workout,
         weight: req.body.weight,
-        repetitions: req.body.repetitions,
+        repetitions: req.body.reps,
         sets: req.body.sets,
         user_id: req.session.user_id
     })
@@ -32,9 +34,9 @@ router.post('/', (req, res) => {
 router.put('/:id', (req, res) => {
     Workout.update(
         {
-            workout_name: req.body.workout_name,
+            workout_name: req.body.workout,
             weight: req.body.weight,
-            repetitions: req.body.repetitions,
+            repetitions: req.body.reps,
             sets: req.body.sets,
             user_id: req.session.user_id
         },

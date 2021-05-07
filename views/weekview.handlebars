@@ -24,7 +24,7 @@
 
 </div>
 
-<a href="/addworkout"> add a workout?</a>
+
 
 <header>
 
@@ -41,9 +41,9 @@
         <div> MON </div>
     </div>
     <div class="exercise-preview-on-card">
-        <div> exercise </div>
-        <div> exercise </div>
-        <div> exercise </div>
+        {{#each workouts as |workout| }}
+            <div> {{ workout_name }} !</div>
+        {{/each}}
     </div>
     <div class="button-to-day-page">
         <a href="/daily" id="button-to-monday">
@@ -54,11 +54,11 @@
 </section>
 
 
-<button id="reset-button" type="submit">
+{{!-- <button id="reset-button" type="submit">
     <h3>Reset Week Workouts <span class="iconify" data-icon="radix-icons:reset" data-inline="false" data-height="1em">
     </h3>
     </span>
-</button>
+</button> --}}
 
 
 <script src="/javascript/weekview.js"></script>
