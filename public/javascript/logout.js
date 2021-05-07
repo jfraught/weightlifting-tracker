@@ -14,5 +14,3 @@ async function logout() {
 document.querySelector('#logout').addEventListener('click', logout);
 
 
-
-//TODO make logging out make more sense
