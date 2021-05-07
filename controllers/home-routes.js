@@ -10,28 +10,30 @@ router.get('/login', function (req, res) {
 
 router.get('/', function (req, res) {
 
-    const { user_id } = req.session || {}
+    console.log("-----------------------------------------------------", req.session, "-----------------------------------------------------");
 
-    if( !user_id ){
+    const { user_id } = req.session || {};
+
+    if (!user_id) {
         res.redirect('/login');
-        return
+        return;
     }
 
     Workout.findAll({
         where: { user_id }
     }).then(raw => {
-        const workouts = raw.map(w => w.get({ plain: true }))
+        const workouts = raw.map(w => w.get({ plain: true }));
 
-        
+
         // if we don't have a user, send them to create / login?
         res.render('weekview', { workouts });
-    })
+    });
 });
 
 
 router.get('/internal/fail', function (req, res) {
-    console.log('testing failed route')
-    throw new Error('Planned failure')
+    console.log('testing failed route');
+    throw new Error('Planned failure');
 });
 
 
@@ -48,7 +50,7 @@ router.get('/daily', withAuth, function (req, res) {
         .then(data => {
             const workouts = data.map(workout => workout.get({ plain: true }));
             res.render('daily', { workouts });
-        })
+        });
 
 }
 );
@@ -85,8 +87,8 @@ router.get('/workouts', (req, res) => {
 //go to form page
 
 router.get('/addworkout', (req, res) => {
-    res.render('add-workout')
-})
+    res.render('add-workout');
+});
 
 
 module.exports = router;

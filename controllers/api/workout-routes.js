@@ -59,7 +59,7 @@ router.put('/:id', (req, res) => {
         });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/', (req, res) => {
     Workout.destroy({
         where: {
             user_id: req.session.user_id

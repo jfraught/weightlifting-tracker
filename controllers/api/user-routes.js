@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
 });
 
 
-// POST /api/users
+// POST /api/users        -------   signup/create user
 router.post('/', (req, res) => {
     User.create({
         email: req.body.email,
@@ -34,6 +34,7 @@ router.post('/', (req, res) => {
         .then(dbUserData => {
             req.session.save(() => {
                 req.session.user_id = dbUserData.id;
+                req.session.email = dbUserData.email;
                 req.session.loggedIn = true;
 
                 res.json(dbUserData);
@@ -88,6 +89,7 @@ router.post('/login', (req, res) => {
 
         req.session.save(() => {
             req.session.user_id = dbUserData.id;
+            req.session.email = dbUserData.email;
             req.session.loggedIn = true;
 
             res.json(dbUserData);
@@ -107,23 +109,23 @@ router.post('/logout', (req, res) => {
     }
 });
 // DELETE /api/users/1
-router.delete('/:id', (req, res) => {
-    User.destroy({
-        where: {
-            id: req.params.id
-        }
-    })
-        .then(UserData => {
-            if (!UserData) {
-                res.status(404).json({ message: 'No user found with this id' });
-                return;
-            }
-            res.json(UserData);
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-});
+// router.delete('/:id', (req, res) => {
+//     User.destroy({
+//         where: {
+//             id: req.params.id
+//         }
+//     })
+//         .then(UserData => {
+//             if (!UserData) {
+//                 res.status(404).json({ message: 'No user found with this id' });
+//                 return;
+//             }
+//             res.json(UserData);
+//         })
+//         .catch(err => {
+//             console.log(err);
+//             res.status(500).json(err);
+//         });
+// });
 
 module.exports = router;
