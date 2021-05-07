@@ -71,3 +71,22 @@ header {
 .button-to-day-page a:hover {
 	color: #89e2cd;
 }
+
+#return-to-week-btn,
+#add-a-workout-btn {
+	background-color: #ffffff;
+	border-radius: 20px;
+	cursor: pointer;
+	font-size: 14px;
+	padding: 5px 40px;
+	border: none;
+}
+#return-to-week-btn:hover,
+#add-a-workout-btn:hover {
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
