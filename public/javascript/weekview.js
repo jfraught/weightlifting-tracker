@@ -1,6 +1,9 @@
 
+const mondayData = document.querySelector('.exercise-preview-on-card').childElementCount
+console.log(mondayData)
 
-const data = [{ x: 'Monday', }, { x: 'Tuesday' }, { x: 'Wednesday' }, { x: 'Thursday' }, { x: 'Saturday' }, { x: 'Sunday' }];
+
+
 const ctx = document.getElementById('myChart').getContext('2d');
 const myChart = new Chart(ctx, {
   type: 'bar',
@@ -8,7 +11,8 @@ const myChart = new Chart(ctx, {
     labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Saturday', 'Sunday'],
     datasets: [{
       label: '# of Workouts',
-      data: [2, 4, 3, 5, 2, 3],
+
+      data: [mondayData, , , , ,],
       options: {
         layout: {
           padding: 30
