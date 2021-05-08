@@ -74,3 +74,8 @@ header {
 .button-to-day-page a:hover {
 	color: #89e2cd;
 }
+
+#myChart {
+	background:white;
+	margin: 20px 0px;
+}
